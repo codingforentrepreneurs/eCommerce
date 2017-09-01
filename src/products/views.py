@@ -7,6 +7,24 @@ from django.shortcuts import render, get_object_or_404
 from .models import Product
 
 
+class ProductFeaturedListView(ListView):
+    template_name = "products/list.html"
+
+    def get_queryset(self, *args, **kwargs):
+        request = self.request
+        return Product.objects.all().featured()
+
+
+class ProductFeaturedDetailView(DetailView):
+    queryset = Product.objects.all().featured()
+    template_name = "products/featured-detail.html"
+
+    # def get_queryset(self, *args, **kwargs):
+    #     request = self.request
+    #     return Product.objects.featured()
+
+
+
 class ProductListView(ListView):
     template_name = "products/list.html"
 
@@ -53,8 +71,8 @@ class ProductDetailView(DetailView):
 
 
 def product_detail_view(request, pk=None, *args, **kwargs):
-    #instance = Product.objects.get(pk=pk) #id
-    #instance = get_object_or_404(Product, pk=pk)
+    # instance = Product.objects.get(pk=pk, featured=True) #id
+    # instance = get_object_or_404(Product, pk=pk, featured=True)
     # try:
     #     instance = Product.objects.get(id=pk)
     # except Product.DoesNotExist:
