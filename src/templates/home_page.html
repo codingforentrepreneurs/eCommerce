@@ -3,6 +3,10 @@
 
 <title>Home Page Template</title>
 
+{% block base_head %}
+<link rel='stylesheet' href='{% static "css/main.css" %}' >
+{% endblock %}
+
 {% block content %}
 <div class='text-center'>
     <h1>{{ title }}</h1>
