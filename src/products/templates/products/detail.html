@@ -8,7 +8,7 @@
         <div class='col'>
     <h1>{{ object.title }}</h1>
     {{ object.timestamp|timesince }} ago
-    {{ object.description|linebreaks }} <br/>
+    {{ object.description|linebreaks }}<br/>
     {% if object.image %}
         <img src='{{ object.image.url }}' class='img-fluid' />
     {% endif %}
