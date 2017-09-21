@@ -35,6 +35,8 @@ class ProductQuerySet(models.query.QuerySet):
         lookups = (Q(title__icontains=query) | 
                   Q(description__icontains=query) |
                   Q(price__icontains=query))
+        #Q(tag__name__icotains=query)
+        # tshirt, t-shirt, t shirt,
         return self.filter(lookups).distinct()
 
 class ProductManager(models.Manager):
