@@ -5,14 +5,22 @@
 
 
     <div class='row'>
-        <div class='col'>
-    <h1>{{ object.title }}</h1>
-    {{ object.timestamp|timesince }} ago
-    {{ object.description|linebreaks }}<br/>
-    {% if object.image %}
-        <img src='{{ object.image.url }}' class='img-fluid' />
-    {% endif %}
-</div>
+        <div class='col-12 col-md-6'>
+                <h1>{{ object.title }}</h1>
+                {{ object.timestamp|timesince }} ago
+                {{ object.description|linebreaks }}<br/>
+                {% if object.image %}
+                    <img src='{{ object.image.url }}' class='img-fluid' />
+                {% endif %}
+        </div>
+        <div class='col-12 col-md-6'>
+            {% if object in cart.products.all %}
+            In cart <button class='btn btn-link'>Remove?</button>
+            {% else %}
+            <button class='btn btn-success'>Add to cart</button>
+            {% endif %}
+
+        </div>
 </div>
 
 
