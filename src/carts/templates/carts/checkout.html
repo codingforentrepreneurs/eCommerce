@@ -6,26 +6,52 @@
 
 
 {% if not billing_profile %}
-<div class='row text-center'>
-<div class='col-12 col-md-6'>
-    <p class='lead'>Login</p>
-    {% include 'accounts/snippets/form.html' with form=login_form next_url=request.build_absolute_uri %}
-</div>
-<div class='col-12 col-md-6'> 
-    Continue as Guest
+    <div class='row text-center'>
+    <div class='col-12 col-md-6'>
+        <p class='lead'>Login</p>
+        {% include 'accounts/snippets/form.html' with form=login_form next_url=request.build_absolute_uri %}
+    </div>
+    <div class='col-12 col-md-6'> 
+        Continue as Guest
 
-    {% url "guest_register" as guest_register_url %}
-    {% include 'accounts/snippets/form.html' with form=guest_form next_url=request.build_absolute_uri action_url=guest_register_url %}
-</div>
+        {% url "guest_register" as guest_register_url %}
+        {% include 'accounts/snippets/form.html' with form=guest_form next_url=request.build_absolute_uri action_url=guest_register_url %}
+    </div>
 
-</div>
+    </div>
 
 {% else %}
-    <h1>Checkout</h1>
+            
+        {% if not object.shipping_address %}
 
-    <p>Cart Total: {{ object.cart.total }}</p>
-    <p>Shipping Total: {{ object.shipping_total }}</p>
-    <p>Order Total: {{ object.total }}</p>
+         <div class='row'>
+            <div class='col-md-6 mx-auto col-10'>
+                <p class='lead'>Shipping Address</p>
+                <hr/>
+            {% url "checkout_address_create" as checkout_address_create %}
+            {% include 'addresses/form.html' with form=address_form next_url=request.build_absolute_uri action_url=checkout_address_create address_type='shipping' %}
+         </div>
+        </div>
+
+
+        {% elif not object.billing_address %}
+        <div class='row'>
+            <div class='col-md-6 mx-auto col-10'>
+                <p class='lead'>Billing Address</p>
+                <hr/>
+            {% url "checkout_address_create" as checkout_address_create %}
+            {% include 'addresses/form.html' with form=address_form next_url=request.build_absolute_uri action_url=checkout_address_create address_type='billing' %}
+         </div>
+        </div>
+        {% else %}
+
+            <h1>Finalize Checkout</h1>
+
+            <p>Cart Total: {{ object.cart.total }}</p>
+            <p>Shipping Total: {{ object.shipping_total }}</p>
+            <p>Order Total: {{ object.total }}</p>
+            <button>Checkout</button>
+        {% endif %}
 {% endif %}
 
 
