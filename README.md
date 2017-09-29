@@ -1,6 +1,6 @@
-# eCommerce **In Progress**
+# eCommerce || Under Development
 
-======
+![eCommerce Logo](https://cfe2-static.s3-us-west-2.amazonaws.com/media/courses/ecommerce/images/ecommerce_coding_for_entrepreneurs.jpg)
 
 We're going to take you step-by-step to build a modern, fully open-source, eCommerce web application using Python, Django, Bootstrap, Javascript, and more. 
 
