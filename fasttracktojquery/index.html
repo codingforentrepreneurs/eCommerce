@@ -21,6 +21,7 @@
     .description {
       width: 250px;
       height: 300px;
+      padding: 30px 10px;
     }
   </style>
 
@@ -73,7 +74,7 @@ Aliquam iaculis urna felis, ullamcorper venenatis enim tempus vitae. Vestibulum 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
    <script src='https://code.jquery.com/jquery-3.2.1.min.js'></script>
-   <script type="text/javascript">
+<!--    <script type="text/javascript">
       $(document).ready(function(){
           var num = 124
           var someString = "some string"
@@ -98,7 +99,7 @@ Aliquam iaculis urna felis, ullamcorper venenatis enim tempus vitae. Vestibulum 
       }) 
 
 
-   </script>
+   </script> -->
 
 
 
@@ -136,6 +137,24 @@ Aliquam iaculis urna felis, ullamcorper venenatis enim tempus vitae. Vestibulum 
 
 
 
+   <script type="text/javascript">
+      $(document).ready(function(){
+        var $descriptionItems = $(".description")
+        // console.log($descriptionItems.length) // 0, 1, 2
+
+        $.each($descriptionItems, function(index, obj){
+          var item = $(this) 
+          var actualHeight = item[0].scrollHeight
+          var shouldBeHeight = item.height()
+          console.log(actualHeight, shouldBeHeight)
+          if (actualHeight > shouldBeHeight + 50){
+            item.css("overflow-y", "scroll")
+          }
+          // console.log(index, item.height())
+          // console.log(index, obj)
+        })
+      })
+   </script>
 
 
 
