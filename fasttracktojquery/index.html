@@ -73,8 +73,38 @@ Aliquam iaculis urna felis, ullamcorper venenatis enim tempus vitae. Vestibulum 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
    <script src='https://code.jquery.com/jquery-3.2.1.min.js'></script>
-
    <script type="text/javascript">
+      $(document).ready(function(){
+          var num = 124
+          var someString = "some string"
+          // some_array = [num, 123, 12333, "an so on"]
+          var someArray = [num, 9, 12333, "an so on"]
+          var someBool = true // true
+          $.each(someArray, function(index, obj){
+              // console.log(index, obj)
+              // 10 % 3  == 1
+              // 9 % 3 == 0
+              if ( obj %2 == 0 && someBool) {
+                console.log(obj, "is even")
+              } else if (obj%3 == 0 && someBool){
+                console.log(obj, "by 3")
+              } else {
+                console.log(obj, "false and/or is not even")
+              }
+          })
+
+
+
+      }) 
+
+
+   </script>
+
+
+
+
+
+   <!-- <script type="text/javascript">
       $(document).ready(function(){
         // jquery is ready to roll
         // $(selector)
@@ -98,7 +128,7 @@ Aliquam iaculis urna felis, ullamcorper venenatis enim tempus vitae. Vestibulum 
             $(".header").css("background-color", "green").css("padding", "30px")
         }, 2000) // in ms
       })
-   </script>
+   </script> -->
 
 
 
