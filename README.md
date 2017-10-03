@@ -164,3 +164,22 @@ More information coming soon.
 
 [19 - Checkout Success](../../tree/648e281ed5a8fff4fdf3d9959e0d32ec232a6624/)
 
+
+## Section: Fast Track to Jquery
+[1 - Getting Started](../../tree/bb9938c039d604ab39696ec166210f72edc2521e/)
+
+[2 - A Basic Selector](../../tree/5640cc849c8db492e1d98cc6070b7efb9c6c201c/)
+
+[3 - Selectors Part 2](../../tree/4cd3edb60b092c996de5a5812e007568ac898979/)
+
+[4 - Content Overflow Part 1](../../tree/bcbfb9973673f2d22e1c1af094d7e722237a2652/)
+
+[5 - Data Types, Iteration and Conditionals](../../tree/ec9b8d3277cea37b225ce81e68d00bd46745f5d7/)
+
+[6 - Content Overflow Part 2](../../tree/d4b8fedec4d61d3d6c1f442505c76b43ee613a70/)
+
+[7 - Click Events](../../tree/13c278c521032f6266e411bef97ad996b501379b/)
+
+[8 - Handling form data in jQuery](../../tree/69201626395880675420d187f55744f6a3c267ca/)
+
+
