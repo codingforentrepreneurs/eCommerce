@@ -27,6 +27,69 @@
 
   </head>
   <body>
+    <div class='container'>
+      <div class='row'>
+        <div class='col mx-auto'>
+          <h3>Form</h3>
+    <form class='new-content-form' method="POST" action='/some/url/link'>
+      <textarea name='content' class='form-control'></textarea>
+      <input type='submit' value='Save' />
+    </form>
+  </div>
+</div>
+  </div>
+
+  <div class='formDataSubmitted'>
+
+
+  </div>
+
+
+
+
+
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+
+
+
+
+
     <h1 class='header'>Hello, world!</h1>
     <h1 class='header'>Hello, world!</h1>
     <h1 class='header' id='header-3'>Header 3</h1>
@@ -103,7 +166,7 @@ Nunc finibus odio sagittis risus tincidunt hendrerit. Etiam sapien nisl, congue 
 
 
 
-   <script type="text/javascript">
+   <!-- <script type="text/javascript">
       $(document).ready(function(){
         var $descriptionItems = $(".description")
         // console.log($descriptionItems.length) // 0, 1, 2
@@ -145,6 +208,7 @@ Nunc finibus odio sagittis risus tincidunt hendrerit. Etiam sapien nisl, congue 
       })
    </script>
 
+ -->
 
 
 
@@ -154,8 +218,41 @@ Nunc finibus odio sagittis risus tincidunt hendrerit. Etiam sapien nisl, congue 
 
 
 
+ <script type="text/javascript">
+    $(document).ready(function(){
+      var contentForm = $(".new-content-form")
+      contentForm.submit(function(event){
+        event.preventDefault()
+        var $this = $(this)
+        //console.log(contentForm.serialize())
+        var textAreaContent = $this.find('textarea')
+        // console.log(textAreaContent.attr("name"))
+        //console.log(textAreaContent.val())
+        var formMethod = $this.attr("method") // contentForm.attr("method")
+        var formAction = $this.attr("action")
+        var data = {
+            "content": textAreaContent.val(),
+            "method": formMethod,
+            "action": formAction
+        }
+
+        $('.formDataSubmitted').text(textAreaContent.val() + " method is " + formMethod)
+
+        textAreaContent.val("")
 
 
+        // $.ajax({
+        //   url:
+        //   method:
+        //   data:
+        // })
+
+      })
+
+    })
+
+
+ </script>
 
 
 
