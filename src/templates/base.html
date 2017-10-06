@@ -18,5 +18,40 @@
 
 
         {% include 'base/js.html' %}
+
+        <script>
+          $(document).ready(function(){
+            var productForm = $(".form-product-ajax") // #form-product-ajax
+
+            productForm.submit(function(event){
+                event.preventDefault();
+                console.log("Form is not sending")
+                var thisForm = $(this)
+                var actionEndpoint = thisForm.attr("action");
+                var httpMethod = thisForm.attr("method");
+                var formData = thisForm.serialize();
+
+                $.ajax({
+                  url: actionEndpoint,
+                  method: httpMethod,
+                  data: formData,
+                  success: function(data){
+                    console.log("success")
+                    console.log(data)
+                  },
+                  error: function(errorData){
+                    console.log("error")
+                    console.log(errorData)
+                  }
+                })
+
+            })
+
+
+
+
+          })
+
+        </script>
     </body>
   </html>
