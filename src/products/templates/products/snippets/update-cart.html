@@ -4,10 +4,12 @@
     {% if in_cart %}
         <button type='submit' class='btn btn-link btn-sm' style="padding:0px;cursor: pointer;">Remove?</button>
     {% else %}
+        <span class='submit-span'>
         {% if product in cart.products.all %}
             In cart <button type='submit' class='btn btn-link'>Remove?</button>
         {% else %}
             <button type='submit'  class='btn btn-success'>Add to cart</button>
         {% endif %}
+        </span>
     {% endif %}
 </form>

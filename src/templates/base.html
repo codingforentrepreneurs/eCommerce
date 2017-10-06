@@ -36,8 +36,12 @@
                   method: httpMethod,
                   data: formData,
                   success: function(data){
-                    console.log("success")
-                    console.log(data)
+                    var submitSpan = thisForm.find(".submit-span")
+                    if (data.added){
+                      submitSpan.html("In cart <button type='submit' class='btn btn-link'>Remove?</button>")
+                    } else {
+                      submitSpan.html("<button type='submit'  class='btn btn-success'>Add to cart</button>")
+                     }
                   },
                   error: function(errorData){
                     console.log("error")
