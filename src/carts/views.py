@@ -56,7 +56,8 @@ def cart_update(request):
                 "removed": not added,
                 "cartItemCount": cart_obj.products.count()
             }
-            return JsonResponse(json_data)
+            return JsonResponse(json_data, status=200) # HttpResponse
+            # return JsonResponse({"message": "Error 400"}, status=400) # Django Rest Framework
     return redirect("cart:home")
 
 
