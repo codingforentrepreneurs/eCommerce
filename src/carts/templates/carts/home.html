@@ -18,9 +18,7 @@
     <tr class='cart-product'>
       <th scope="row">{{ forloop.counter }}</th>
       <td><a href='{{ product.get_absolute_url }}'>{{ product.title }}</a> 
-
-
-        {% include 'products/snippets/update-cart.html' with product=product cart=cart in_cart=True %}
+        {% include 'carts/snippets/remove-product.html' with product_id=product.id %}
       </td>
       <td>{{ product.price }}</td>
     </tr>
@@ -40,6 +38,11 @@
 
   </tbody>
 </table>
+
+<div class='cart-item-remove-form' style='display:none'>
+
+    {% include 'carts/snippets/remove-product.html' %}
+  </div>
 
 {% else %}
 <p class='lead'>Cart is empty</p>
