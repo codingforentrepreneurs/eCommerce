@@ -65,6 +65,10 @@ More information coming soon.
 
 ### Section: Bootstrap
 
+1 - Adding Bootstrap (no code)
+
+2 - Container vs Container-Fluid (no code)
+
 [3 - Rows And Columns](../../tree/d0e38edee652c5787dc7bf12e2ec2909fa3121f8/)
 
 [4 - Column Sizing](../../tree/b06f0a6661ac37d71be3fe38580bb561f71d2e42/)
@@ -165,7 +169,7 @@ More information coming soon.
 [19 - Checkout Success](../../tree/648e281ed5a8fff4fdf3d9959e0d32ec232a6624/)
 
 
-## Section: Fast Track to Jquery
+### Section: Fast Track to Jquery
 [1 - Getting Started](../../tree/bb9938c039d604ab39696ec166210f72edc2521e/)
 
 [2 - A Basic Selector](../../tree/5640cc849c8db492e1d98cc6070b7efb9c6c201c/)
@@ -182,4 +186,33 @@ More information coming soon.
 
 [8 - Handling form data in jQuery](../../tree/69201626395880675420d187f55744f6a3c267ca/)
 
+
+
+### Section: Products & Async
+
+1 - Sync vs Async (no code)
+
+[2 - Ajax-ify a Form](../../tree/1d4d7ca41f515f4c12fed183023fde22463d8058/)
+
+[3 - Handle Ajax in Django with JsonResponse](../../tree/d6acdc28e52f47257afb4c4b3dc6e5f398f39e43/)
+
+[4 - Cart Item Count](../../tree/9455685b79a7ba829799d6dc700dce71c930c5d3/)
+
+[5 - Refresh Cart Ajax](../../tree/dba7c5401106c658a4a29729a1d5fb5efa596c2f/)
+
+[6 & 7 - Refresh Cart Ajax Part 2 & 3](../../tree/7f38a87f80d0c9a32e7e10149af1b19e8aa3d362/)
+
+[8 - Finalize Cart Updating with Ajax](../../tree/c16e30dbd9af01fddef5614f3857de4a7fcace3b/)
+
+[8 - Finalize Cart Updating with Ajax](../../tree/2072edc9f0451a8d9c88e0c6c9394310234331a8/)
+
+[9 - Auto Search](../../tree/c433c4a06ab3d0d199e4a46b390cc98a0328bad1/)
+
+[10 - Display Errors with jQuery Confirm](../../tree/ab040383aeed92a5ab457d25320fc1dddf72bc5d/)
+
+[11 - Ajaxify the Contact Form Part 1 & 2](../../tree/cc35747ceba808fd57350eaf59e51f95a7b091c4/)
+
+[13 - Custom eCommerce JS](../../tree/3431064fde1394e586076b23ba76827e03d626ce/)
+
+[14 - Ajax CSRF Security for Django](../../tree/82111856925f0d9a83eb08c0e937a95ca788d641/)
 
