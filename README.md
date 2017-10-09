@@ -216,3 +216,24 @@ More information coming soon.
 
 [14 - Ajax CSRF Security for Django](../../tree/82111856925f0d9a83eb08c0e937a95ca788d641/)
 
+
+## Add Ons
+
+### Custom Django User Model
+
+1 - Before we get started (no code)
+
+[2 - Create the Abstract Base User](../../tree/c698e75c82b6145546c93f8d32fec616dfaf1cac/)
+
+[3 - Create the User Model Manager](../../tree/968ec0525e27c3d95f9fc033833264437f90a47b/)
+
+[5 - Reload the Database with Fixtures](../../tree/96261517bc1e4c7b2603232569de479ae4c44a9d/)
+
+[6 - Forms & Admin for our Custom User](../../tree/464ff60dd57e8babf0096670f6bb5c62bdaa2e2c/)
+
+[7 - Add a Required Field to the User Model](../../tree/c12eebf5e8c5961b18f65f8741880f40f6cfc99b/)
+
+[8 - Update Login & Register Forms](../../tree/aefcaac8eb1f4f0d7e6f68dde46eb9f82f7e5ff7/)
+
+[9 - Login & Register Views](../../tree/3cccc2c44b9d81fcc4db4ed9bae77a8e23cf263e/)
+
