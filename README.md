@@ -227,6 +227,8 @@ More information coming soon.
 
 [3 - Create the User Model Manager](../../tree/968ec0525e27c3d95f9fc033833264437f90a47b/)
 
+4 - Change Auth User Model to our Custom Model (no code)
+
 [5 - Reload the Database with Fixtures](../../tree/96261517bc1e4c7b2603232569de479ae4c44a9d/)
 
 [6 - Forms & Admin for our Custom User](../../tree/464ff60dd57e8babf0096670f6bb5c62bdaa2e2c/)
