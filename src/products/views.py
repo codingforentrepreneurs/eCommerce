@@ -3,6 +3,7 @@ from django.http import Http404
 from django.views.generic import ListView, DetailView
 from django.shortcuts import render, get_object_or_404
 
+from analytics.signals import object_viewed_signal
 from carts.models import Cart
 
 from .models import Product
@@ -67,6 +68,7 @@ class ProductDetailSlugView(DetailView):
     def get_object(self, *args, **kwargs):
         request = self.request
         slug = self.kwargs.get('slug')
+
         #instance = get_object_or_404(Product, slug=slug, active=True)
         try:
             instance = Product.objects.get(slug=slug, active=True)
@@ -77,6 +79,8 @@ class ProductDetailSlugView(DetailView):
             instance = qs.first()
         except:
             raise Http404("Uhhmmm ")
+
+        # object_viewed_signal.send(instance.__class__, instance=instance, request=request)
         return instance
 
 
