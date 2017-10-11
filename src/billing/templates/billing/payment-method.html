@@ -5,7 +5,7 @@
 
 <div class='col-10 col-md-6 mx-auto'>
     <h1>Add Payment Method</h1>
-<form action="/charge" method="post" id="payment-form" data-token='{{ publish_key }}'>
+<form class='payment-form' action="/charge" method="post" id="payment-form" data-token='{{ publish_key }}' data-next-url='{% if next_url %}{{ next_url }}{% endif %}'>
   <div class="form-row">
     <!-- <label for="card-element">
       Credit or debit card
@@ -18,7 +18,7 @@
     <div id="card-errors" role="alert"></div>
   </div>
 
-  <button class='btn btn-primary my-3'>Submit Payment</button>
+  <button class='btn btn-primary my-3'>Add Payment Method</button>
 </form>
 </div>
 
@@ -29,8 +29,19 @@
 {% block javascript %}
 <script>
 
+// https secure site when live
+
+var paymentForm = $(".payment-form")
+if (paymentForm.length > 1){
+    alert("Only one payment form is allowed per page")
+    paymentForm.css('display', 'none')
+}
+else if (paymentForm.length == 1) {
+
+var pubKey = paymentForm.attr('data-token')
+var nextUrl = paymentForm.attr('data-next-url')
     // Create a Stripe client
-var stripe = Stripe('pk_test_PrV61avxnHaWIYZEeiYTTVMZ');
+var stripe = Stripe(pubKey);
 
 // Create an instance of Elements
 var elements = stripe.elements();
@@ -82,14 +93,34 @@ form.addEventListener('submit', function(event) {
       errorElement.textContent = result.error.message;
     } else {
       // Send the token to your server
-      stripeTokenHandler(result.token);
+      stripeTokenHandler(nextUrl, result.token);
     }
   });
 });
 
-function stripeTokenHandler(token){
-    console.log(token)
+function stripeTokenHandler(nextUrl, token){
+    // console.log(token.id)
+    var paymentMethodEndpoint = '/billing/payment-method/create/'
+    var data = {
+        'token': token.id
+    }
+    $.ajax({
+        data: data,
+        url: paymentMethodEndpoint,
+        method: "POST",
+        success: function(data){
+            console.log(data)
+            if (nextUrl) {
+                window.location.href = nextUrl
+            } else {
+                window.location.reload()
+            }
+        },
+        error: function(error){
+            console.log(error)
+        }
+    })
 }
-
+}
 </script>
 {% endblock %}
