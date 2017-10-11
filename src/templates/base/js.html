@@ -13,10 +13,20 @@ slim is missing ajax -->
 <!-- jquery-confirm JS -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.0/jquery-confirm.min.js"></script>
 
+<!-- js Render -->
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jsrender/0.9.88/jsrender.min.js'></script>
+{% include 'base/js_templates.html' %}
 
 <!-- Django Secure AJAX JS -->
 <script src='{% static "js/csrf.ajax.js" %}'></script>
 
 <!-- eCommerce Custom JS -->
 <script src='{% static "js/ecommerce.js" %}'></script>
+
+<!-- eCommerce Main JS -->
+<script src='{% static "js/ecommerce.main.js" %}'></script>
+
+
+
+
 
