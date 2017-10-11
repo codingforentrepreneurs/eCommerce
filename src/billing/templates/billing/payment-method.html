@@ -5,6 +5,10 @@
 
 <div class='col-10 col-md-6 mx-auto'>
     <h1>Add Payment Method</h1>
+
+<div class='stripe-payment-form' data-token='{{ publish_key }}' data-next-url='{% if next_url %}{{ next_url }}{% endif %}'></div>
+
+
 <form class='payment-form' action="/charge" method="post" id="payment-form" data-token='{{ publish_key }}' data-next-url='{% if next_url %}{{ next_url }}{% endif %}'>
   <div class="form-row">
     <!-- <label for="card-element">
@@ -98,6 +102,16 @@ form.addEventListener('submit', function(event) {
   });
 });
 
+
+function redirectToNext(nextPath, timeoffset) {
+    // body...
+    if (nextPath){
+    setTimeout(function(){
+                window.location.href = nextPath
+            }, timeoffset)
+    }
+}
+
 function stripeTokenHandler(nextUrl, token){
     // console.log(token.id)
     var paymentMethodEndpoint = '/billing/payment-method/create/'
@@ -109,12 +123,18 @@ function stripeTokenHandler(nextUrl, token){
         url: paymentMethodEndpoint,
         method: "POST",
         success: function(data){
-            console.log(data)
-            if (nextUrl) {
-                window.location.href = nextUrl
-            } else {
-                window.location.reload()
+            var succesMsg = data.message || "Success! Your card was added."
+            card.clear()
+            if (nextUrl){
+                succesMsg = succesMsg + "<br/><br/><i class='fa fa-spin fa-spinner'></i> Redirecting..."
             }
+            if ($.alert){
+                $.alert(succesMsg)
+            } else {
+                alert(succesMsg)
+            }
+            redirectToNext(nextUrl, 1500)
+            
         },
         error: function(error){
             console.log(error)
