@@ -72,9 +72,11 @@
                 <p>Cart Items: {% for product in object.cart.products.all %}{{ product }}{% if not forloop.last %}, {% endif %}{% endfor %}</p>
                 <p>Shipping Address: {{ object.shipping_address.get_address }}</p>
                 <p>Billing Address: {{ object.shipping_address.get_address }}</p>
+                <p>Payment Method: {{ billing_profile.default_card }} (<a href="{{ billing_profile.get_payment_method_url }}?next={{ request.build_absolute_uri }}">Change</a>)</p>
                 <p>Cart Total: {{ object.cart.total }}</p>
                 <p>Shipping Total: {{ object.shipping_total }}</p>
                 <p>Order Total: {{ object.total }}</p>
+
                 <form class='form' method='POST' action="">{% csrf_token %}
                     <button type='submit' class='btn btn-success'>Checkout</button>
                 </form>

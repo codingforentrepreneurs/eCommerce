@@ -1,7 +1,7 @@
 from django.conf import settings
 from django.db import models
 from django.db.models.signals import post_save, pre_save
-
+from django.core.urlresolvers import reverse
 from accounts.models import GuestEmail
 User = settings.AUTH_USER_MODEL
 
@@ -52,6 +52,9 @@ class BillingProfile(models.Model):
     def get_cards(self):
         return self.card_set.all()
 
+    def get_payment_method_url(self):
+        return reverse('billing-payment-method')
+
     @property
     def has_card(self): # instance.has_card
         card_qs = self.get_cards()
@@ -59,7 +62,7 @@ class BillingProfile(models.Model):
 
     @property
     def default_card(self):
-        default_cards = self.get_cards().filter(default=True)
+        default_cards = self.get_cards().filter(active=True, default=True)
         if default_cards.exists():
             return default_cards.first()
         return None
@@ -127,6 +130,15 @@ class Card(models.Model):
     def __str__(self):
         return "{} {}".format(self.brand, self.last4)
 
+
+def new_card_post_save_receiver(sender, instance, created, *args, **kwargs):
+    if instance.default:
+        billing_profile = instance.billing_profile
+        qs = Card.objects.filter(billing_profile=billing_profile).exclude(pk=instance.pk)
+        qs.update(default=False)
+
+
+post_save.connect(new_card_post_save_receiver, sender=Card)
 
 
 
