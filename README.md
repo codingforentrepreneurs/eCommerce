@@ -256,3 +256,23 @@ More information coming soon.
 [6 - Handle the Object Viewed Signal](../../tree/73bfc3e04beee52b9ad6cd503d3b7c8d8ebeb71e/)
 
 [7 - Handling and Ending User Sessions](../../tree/4c08919bb151553b150b94ae51825517bc2cd460/)
+
+### Stripe Integration
+
+[1 - Getting Started](../../tree/249af4dcc7cbc5496aa0ebca17c3a501021cb5e2/)
+
+[2 - Create Stripe Customer](../../tree/0a835b238f834758ba54db1c6d4978f517dccdc6/)
+
+[3 - Payment Method View & Stripe JS](../../tree/08aab3440a89cea22be0a1053b106b49d8d52f08/)
+
+[4 - Improving Payment Method Form](../../tree/ca4245aabaacc0f3c0f7e6e77902f0312a30686e/)
+
+[5 - Improving Payment Method Form Part 2](../../tree/0ff716c8a8bda2605cf349b19705d46798bb5d1b/)
+
+[6 - Reusable Stripe Module](../../tree/291073b86363a63cb588305e9c258dddc5cad949/)
+
+[7 - Add Card to Customer with Stripe](../../tree/1193c2a22da5e591aca057a4f153fdc3388c23fd/)
+
+[8 - Save Card in Django](../../tree/606f73653342ce361400a8fdddd8f0d917d6552f/)
+
+[9 - Charge the Customer](../../tree/0d4fba2c11c8bf3d4b116c4e619ffb6c41a161de/)
