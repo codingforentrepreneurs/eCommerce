@@ -64,6 +64,11 @@ class BillingProfile(models.Model):
             return default_cards.first()
         return None
 
+    def set_cards_inactive(self):
+        cards_qs = self.get_cards()
+        cards_qs.update(active=False)
+        return cards_qs.filter(active=True).count()
+
 def billing_profile_created_receiver(sender, instance, *args, **kwargs):
     if not instance.customer_id and instance.email:
         print("ACTUAL API REQUEST Send to stripe/braintree")
@@ -84,6 +89,9 @@ post_save.connect(user_created_receiver, sender=User)
 
 
 class CardManager(models.Manager):
+    def all(self, *args, **kwargs): # ModelKlass.objects.all() --> ModelKlass.objects.filter(active=True)
+        return self.get_queryset().filter(active=True)
+
     def add_new(self, billing_profile, token):
         if token:
             customer = stripe.Customer.retrieve(billing_profile.customer_id)
@@ -111,6 +119,8 @@ class Card(models.Model):
     exp_year                = models.IntegerField(null=True, blank=True)
     last4                   = models.CharField(max_length=4, null=True, blank=True)
     default                 = models.BooleanField(default=True)
+    active                  = models.BooleanField(default=True)
+    timestamp               = models.DateTimeField(auto_now_add=True)
 
     objects = CardManager()
 
