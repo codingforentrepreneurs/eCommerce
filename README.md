@@ -276,3 +276,9 @@ More information coming soon.
 [8 - Save Card in Django](../../tree/606f73653342ce361400a8fdddd8f0d917d6552f/)
 
 [9 - Charge the Customer](../../tree/0d4fba2c11c8bf3d4b116c4e619ffb6c41a161de/)
+
+[10 - Putting it All Together](../../tree/252524c4b46a2bad8da4cc000af0234a0227cf11/)
+
+[11 - Guest Card Checkout](../../tree/78924c3cc4ed3f3ed809a69d40a9320f423e5676/)
+
+[12 - Changing Payment Methods](../../tree/90830de29bd3bfcf948527b2fd456f27be37e14c/)
