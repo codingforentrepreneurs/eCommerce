@@ -282,3 +282,9 @@ More information coming soon.
 [11 - Guest Card Checkout](../../tree/78924c3cc4ed3f3ed809a69d40a9320f423e5676/)
 
 [12 - Changing Payment Methods](../../tree/90830de29bd3bfcf948527b2fd456f27be37e14c/)
+
+[13 - Improve Card UI - Part 1](../../tree/c1a67d9c6d1c29065d1b09a771e14a7b5a0e8fc2/)
+
+[14 - Improve Card UI - Part 2](../../tree/c1a67d9c6d1c29065d1b09a771e14a7b5a0e8fc2/)
+
+
