@@ -287,4 +287,17 @@ More information coming soon.
 
 [14 - Improve Card UI - Part 2](../../tree/c1a67d9c6d1c29065d1b09a771e14a7b5a0e8fc2/)
 
+### Mailchimp Integration 
+
+[3 - Setup API Keys](../../tree/f540e03ebff55371f40b971d7fed439d5af886bf/)
+
+[4 - Marketing App](../../tree/4de0f03100f566797a6ac3a2de6b7764169aad24/)
+
+[5 - Mailchimp Class Part 1](../../tree/7ac2eb8e4d747fe7cc4e94c2f01ad87da9b01395/)
+
+[6 - Mailchimp Class Part 2](../../tree/26cd4fe4c3b3b1dff4426aae260578a551c5854a/)
+
+[7 - Mailchimp Class Part 3](../../tree/08dfcb3f273e0993c935372b91b5a47e66ac77c1/)
+
+[8 - Django & Mailchimp](../../tree/128499e857cf64b03a64106eb808b7177d272400/)
 
