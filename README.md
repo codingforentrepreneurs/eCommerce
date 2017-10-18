@@ -301,3 +301,7 @@ More information coming soon.
 
 [8 - Django & Mailchimp](../../tree/128499e857cf64b03a64106eb808b7177d272400/)
 
+[9 - User Email Marketing Preference View](../../tree/73756bab33f261106b9489afe1815f8a6377126e)
+
+[10 - Mailchimp Webhook Handler](../../tree/a6d88a985e21dcd926acf7fb06808459493ff0b9)
+
