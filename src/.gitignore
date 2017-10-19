@@ -1,9 +1,5 @@
 ecommerce/settings/local.py
 
-
-
-
-
 .DS_STORE
 *.sublime-project
 fasttracktojquery/

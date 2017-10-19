@@ -1,0 +1,17 @@
+certifi==2017.7.27.1
+cfe==0.0.15
+chardet==3.0.4
+Django==1.11.6
+gitdb2==2.0.3
+GitPython==2.1.7
+idna==2.6
+olefile==0.44
+Pillow==4.3.0
+pip==9.0.1
+pytz==2017.2
+requests==2.18.4
+setuptools==36.6.0
+smmap2==2.0.3
+stripe==1.68.0
+urllib3==1.22
+wheel==0.30.0
