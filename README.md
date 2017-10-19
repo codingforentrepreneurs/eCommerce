@@ -305,3 +305,32 @@ More information coming soon.
 
 [10 - Mailchimp Webhook Handler](../../tree/a6d88a985e21dcd926acf7fb06808459493ff0b9)
 
+
+### Go Live
+
+1 - Local vs Production Environments (no code)
+
+[2 - New Settings Module](../../tree/f776fc8227c5717b7982274d5de2a12676ab835b/)
+
+[3 - Multiple Settings Modules](../../tree/95542fffb0f225e281557d9616fb8caae85f1a06/)
+
+[4 - Prepare for HTTPs](../../tree/b772608670c45d6654a84b6b0dd014bd6cacc104/)
+
+[5 - The gitignore File](../../tree/0dc38fd34caa8c82850cbab6509b7357b53d904e/)
+
+[6 - Requirements File](../../tree/aaad5cda6f3a3170b6b9430d97db11e84ff191c2/)
+
+[7 - Setup Git Version Control](../../tree/f65d67029ebad9a22f6e63ef66170e533a385f2e/)
+
+[8 - Deploy to Heroku](../../tree/a2041155d977f6d0451aa6220fec0f664bc0cb06/)
+
+[9 - AWS S3 for Static Files](../../tree/90044ca398bbe3b06440d937dc7ea0a645ec593b/)
+
+[10 - Add Custom Domain & HTTPs on Heroku](../../tree/3689bfcd72670fa59ceaa864d58927f2c2fc53d7/)
+
+[11 - Live Environment Variables](../../tree/e3210c4ae568e5e1e48a1d70ad2e9b67cf83aa63/)
+
+[12 - Error Views and Templates](../../tree/764a8acba104c60676d83574baf7c0c0806501ad/)
+
+[13 - Setup Email to Help Solve Server Errors](../../tree/b151d182dc5ae1e380c2959a09a8eb6e2fe2fcc8/)
+
