@@ -38,6 +38,7 @@ urlpatterns = [
     #url(r'^accounts/login/$', RedirectView.as_view(url='/login')),
     url(r'^accounts/$', RedirectView.as_view(url='/account')),
     url(r'^account/', include("accounts.urls", namespace='account')),
+    url(r'^accounts/', include("accounts.passwords.urls")),
     url(r'^contact/$', contact_page, name='contact'),
     url(r'^login/$', LoginView.as_view(), name='login'),
     url(r'^checkout/address/create/$', checkout_address_create_view, name='checkout_address_create'),
