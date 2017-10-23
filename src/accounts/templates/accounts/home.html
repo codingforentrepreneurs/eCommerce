@@ -1,5 +1,59 @@
 {% extends "base.html" %}
 
 {% block content %}
-{{ request.user }}
+<div class='row'>
+<div class='col-12'>
+<h1>Account</h1>
+<hr/>
+</div>
+<div class='col-12 col-md-3 my-3'>
+    <div class="card">
+      <div class="card-body">
+        <h4 class="card-title">Support</h4>
+            - About
+            - Contact
+      </div>
+    </div>
+</div>
+
+
+
+<div class='col-12 col-md-3 my-3'>
+    <div class="card">
+      <div class="card-body">
+        <h4 class="card-title">Billing</h4>
+            - Addresses
+            - Payment Method
+            - Orders
+      </div>
+    </div>
+</div>
+
+
+<div class='col-12 col-md-3 my-3'>
+    <div class="card">
+      <div class="card-body">
+        <h4 class="card-title">Preferences</h4> 
+            - Name
+            - Email ? # big maybe
+            - Password Reset
+            - Email Marketing Perference
+      </div>
+    </div>
+</div>
+
+
+<div class='col-12 col-md-3 my-3'>
+    <div class="card">
+      <div class="card-body">
+        <h4 class="card-title">History</h4> 
+            - Products Viewed
+      </div>
+    </div>
+</div>
+
+
+</div>
+
+
 {% endblock %}
