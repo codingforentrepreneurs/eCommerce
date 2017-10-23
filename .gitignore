@@ -1,5 +1,8 @@
 .DS_STORE
 
+.env
+notes/email-activation.py
+
 # Virtualenv related
 bin/
 include/

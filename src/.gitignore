@@ -1,6 +1,8 @@
 # Not Ready for Production
 # marketing/
 
+.env
+
 
 ecommerce/settings/local.py
 
