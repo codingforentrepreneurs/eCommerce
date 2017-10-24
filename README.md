@@ -343,9 +343,9 @@ More information coming soon.
 
 [2 - Naming & Dropdown](../../tree/dc1dd608ef6407d11b4d5b5e2784220fbe8d1ff4/)
 
-[3 - Account Cards](../../tree/c07ba032b597191f043a4ac9cd75d10ee840afcb/)
+[3 - Account Bootstrap Cards](../../tree/c07ba032b597191f043a4ac9cd75d10ee840afcb/)
 
-[4 - Link Account Cards](../../tree/287fbca8d84c1a9112e6cb3adeba1c8a15693fcc/)
+[4 - Link Account Bootstrap Cards](../../tree/287fbca8d84c1a9112e6cb3adeba1c8a15693fcc/)
 
 [5 - Password Reset and Change](../../tree/55d62beec3b7374e955df8b9b6e6ddbde5997abc/)
 
