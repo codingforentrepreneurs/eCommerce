@@ -335,3 +335,26 @@ More information coming soon.
 [13 - Setup Email to Help Solve Server Errors](../../tree/b151d182dc5ae1e380c2959a09a8eb6e2fe2fcc8/)
 
 [14 - Using Heroku Locally](../../tree/6c24c03aaf84a4fb02d9cc855815ab0e581798ff)
+
+
+### Account & Settings
+
+[1 - User Account Home](../../tree/e56ea8420170c40b420780a48cbf1087a5081525/)
+
+[2 - Naming & Dropdown](../../tree/dc1dd608ef6407d11b4d5b5e2784220fbe8d1ff4/)
+
+[3 - Account Cards](../../tree/c07ba032b597191f043a4ac9cd75d10ee840afcb/)
+
+[4 - Link Account Cards](../../tree/287fbca8d84c1a9112e6cb3adeba1c8a15693fcc/)
+
+[5 - Password Reset and Change](../../tree/55d62beec3b7374e955df8b9b6e6ddbde5997abc/)
+
+[5 - send_email and get_template](../../tree/e3c86dec0b7b985c8b1d403786d0f7a201f2767b/)
+
+[6 - Email Activation](../../tree/30f9aa0d6605014b52f80b85d139597ef6b0fcf6/)
+
+[7 - Custom QuerySet for Confirmable Activations](../../tree/4fe792b8d5e868a813f8b521cda2660fe61048ed/)
+
+[8 - Email Activation View](../../tree/0904726b55184994ac180bc0c0d55edb2a97feaa/)
+
+[9 - Email Reactivation](../../tree/3b9e78cece5c834043bd41b319a78109badf2253/)
