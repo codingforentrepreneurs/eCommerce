@@ -1,5 +1,6 @@
 from datetime import timedelta
 from django.conf import settings
+from django.core.urlresolvers import reverse
 from django.db import models
 from django.db.models.signals import pre_save, post_save
 from django.contrib.auth.models import (
@@ -165,7 +166,7 @@ class EmailActivation(models.Model):
         if not self.activated and not self.forced_expired:
             if self.key:
                 base_url = getattr(settings, 'BASE_URL', 'https://www.pythonecommerce.com')
-                key_path = self.key # use reverse
+                key_path = reverse("account:email-activate", kwargs={'key': self.key}) # use reverse
                 path = "{base}{path}".format(base=base_url, path=key_path)
                 context = {
                     'path': path,
