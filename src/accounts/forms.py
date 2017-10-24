@@ -5,6 +5,7 @@ from django.contrib.auth.forms import ReadOnlyPasswordHashField
 
 User = get_user_model()
 
+from .models import EmailActivation
 
 class UserAdminCreationForm(forms.ModelForm):
     """A form for creating new users. Includes all the required
@@ -86,7 +87,9 @@ class RegisterForm(forms.ModelForm):
         # Save the provided password in hashed format
         user = super(RegisterForm, self).save(commit=False)
         user.set_password(self.cleaned_data["password1"])
-        user.is_active = False # send confirmation email
+        user.is_active = False # send confirmation email via signals
+        # obj = EmailActivation.objects.create(user=user)
+        # obj.send_activation_email()
         if commit:
             user.save()
         return user

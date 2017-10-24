@@ -30,7 +30,7 @@ EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD')
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 DEFAULT_FROM_EMAIL = 'Python ecommerce <hungrypy@gmail.com>'
-
+BASE_URL = 'https://www.pythonecommerce.com/'
 
 MANAGERS = (
     ('Justin Mitchel', "hungrypy@gmail.com"),
