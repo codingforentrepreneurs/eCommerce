@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+
+
+<div class='row'>
+    <div class='col-12'>
+        <h1>Orders</h1>
+    </div>
+</div>
+<div class='row'>
+    <div class='col'>
+        <table class='table'>
+            <thead><th>Order Id</th><th>Status</th><th>Total</th></thead>
+
+            <tbody>
+                {% for object in object_list %}
+                    <tr>
+                        <td><a href='{{ object.get_absolute_url }}'>{{ object.order_id }}</a></td>
+                        <td>{{ object.get_status }}</td>
+                        <td>{{ object.total }}</td>
+                    </tr>
+                {% empty %}
+                <tr><td colspan="3"><p class='lead'>No orders yet.</td></tr>
+                {% endfor %}
+            </tbody>
+
+        </table>
+    </div>
+</div>
+
+
+
+{% endblock %}
