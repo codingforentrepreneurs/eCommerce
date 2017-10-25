@@ -87,6 +87,29 @@ class LoginForm(forms.Form):
         data = self.cleaned_data
         email  = data.get("email")
         password  = data.get("password")
+        qs = User.objects.filter(email=email)
+        if qs.exists():
+            # user email is registered, check active/
+            not_active = qs.filter(is_active=False)
+            if not_active.exists():
+                ## not active, check email activation
+                link = reverse("account:resend-activation")
+                reconfirm_msg = """Go to <a href='{resend_link}'>
+                resend confirmation email</a>.
+                """.format(resend_link = link)
+                confirm_email = EmailActivation.objects.filter(email=email)
+                is_confirmable = confirm_email.confirmable().exists()
+                if is_confirmable:
+                    msg1 = "Please check your email to confirm your account or " + reconfirm_msg.lower()
+                    raise forms.ValidationError(mark_safe(msg1))
+                email_confirm_exists = EmailActivation.objects.email_exists(email).exists()
+                if email_confirm_exists:
+                    msg2 = "Email not confirmed. " + reconfirm_msg
+                    raise forms.ValidationError(mark_safe(msg2))
+                if not is_confirmable and not email_confirm_exists:
+                    raise forms.ValidationError("This user is inactive.")
+
+
         user = authenticate(request, username=email, password=password)
         if user is None:
             raise forms.ValidationError("Invalid credentials")
