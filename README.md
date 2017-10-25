@@ -349,12 +349,24 @@ More information coming soon.
 
 [5 - Password Reset and Change](../../tree/55d62beec3b7374e955df8b9b6e6ddbde5997abc/)
 
-[5 - send_email and get_template](../../tree/e3c86dec0b7b985c8b1d403786d0f7a201f2767b/)
+[6 - send_email and get_template](../../tree/e3c86dec0b7b985c8b1d403786d0f7a201f2767b/)
 
-[6 - Email Activation](../../tree/30f9aa0d6605014b52f80b85d139597ef6b0fcf6/)
+[7 - Email Activation](../../tree/30f9aa0d6605014b52f80b85d139597ef6b0fcf6/)
 
-[7 - Custom QuerySet for Confirmable Activations](../../tree/4fe792b8d5e868a813f8b521cda2660fe61048ed/)
+[8 - Custom QuerySet for Confirmable Activations](../../tree/4fe792b8d5e868a813f8b521cda2660fe61048ed/)
 
-[8 - Email Activation View](../../tree/0904726b55184994ac180bc0c0d55edb2a97feaa/)
+[9 - Email Activation View](../../tree/0904726b55184994ac180bc0c0d55edb2a97feaa/)
 
-[9 - Email Reactivation](../../tree/3b9e78cece5c834043bd41b319a78109badf2253/)
+[10 - Email Reactivation](../../tree/3b9e78cece5c834043bd41b319a78109badf2253/)
+
+[11 - Improved Login Form & View](../../tree/359119ff0efdb482ec1e6133877ef251e3a4ebf5/)
+
+[12 - Login Form for Confirmation Emails](../../tree/a7f53f7598259f711f62957a4588dc187895e07d/)
+
+[13 - Upgrading the Guest Checkout Form](../../tree/58cac4150c5c5b724feb2f92e795ded4c162e7df/)
+
+[14 - Edit Account Details](../../tree/c471c3a04f46e7b851197de6a217fa6a68ec67b7/)
+
+[15 - User Product History View](../../tree/e50e38a7f01c9348866a92e8c7e2e772ba229763/)
+
+[16 - Orders & Order Detail](../../tree/e92f5c4ac8413fc9988510b0889a5a582cbae462/)
