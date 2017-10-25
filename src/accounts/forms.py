@@ -6,7 +6,7 @@ from django.utils.safestring import mark_safe
 
 User = get_user_model()
 
-from .models import EmailActivation
+from .models import EmailActivation, GuestEmail
 
 
 class ReactivateEmailForm(forms.Form):
@@ -70,8 +70,27 @@ class UserAdminChangeForm(forms.ModelForm):
 
 
 
-class GuestForm(forms.Form):
-    email    = forms.EmailField()
+class GuestForm(forms.ModelForm):
+    #email    = forms.EmailField()
+    class Meta:
+        model = GuestEmail
+        fields = [
+            'email'
+        ]
+
+    def __init__(self, request, *args, **kwargs):
+        self.request = request
+        super(GuestForm, self).__init__(*args, **kwargs)
+
+    def save(self, commit=True):
+        # Save the provided password in hashed format
+        obj = super(GuestForm, self).save(commit=False)
+        if commit:
+            obj.save()
+            request = self.request
+            request.session['guest_email_id'] = obj.id
+        return obj
+
 
 
 class LoginForm(forms.Form):
@@ -108,8 +127,6 @@ class LoginForm(forms.Form):
                     raise forms.ValidationError(mark_safe(msg2))
                 if not is_confirmable and not email_confirm_exists:
                     raise forms.ValidationError("This user is inactive.")
-
-
         user = authenticate(request, username=email, password=password)
         if user is None:
             raise forms.ValidationError("Invalid credentials")

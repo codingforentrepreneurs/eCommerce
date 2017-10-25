@@ -23,7 +23,7 @@ from django.contrib.auth.views import LogoutView
 from django.views.generic import TemplateView, RedirectView
 
 
-from accounts.views import LoginView, RegisterView, guest_register_view
+from accounts.views import LoginView, RegisterView, GuestRegisterView
 from addresses.views import checkout_address_create_view, checkout_address_reuse_view
 from billing.views import payment_method_view, payment_method_createview
 from carts.views import cart_detail_api_view
@@ -43,7 +43,7 @@ urlpatterns = [
     url(r'^login/$', LoginView.as_view(), name='login'),
     url(r'^checkout/address/create/$', checkout_address_create_view, name='checkout_address_create'),
     url(r'^checkout/address/reuse/$', checkout_address_reuse_view, name='checkout_address_reuse'),
-    url(r'^register/guest/$', guest_register_view, name='guest_register'),
+    url(r'^register/guest/$', GuestRegisterView.as_view(), name='guest_register'),
     url(r'^logout/$', LogoutView.as_view(), name='logout'),
     url(r'^api/cart/$', cart_detail_api_view, name='api-cart'),
     url(r'^cart/', include("carts.urls", namespace='cart')),
