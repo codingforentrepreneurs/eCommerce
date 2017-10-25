@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+<div class='col-12 col-md-6 mx-auto'>
+{% if title %}<h1 class='my-3'>{{ title }}</h1>{% endif %}
+<form method='POST' action='{% if action_url %}{{ action_url }}{% endif %}'> {% csrf_token %}
+    {% if next_url %}
+    <input type='hidden' name='next' value='{{ next_url }}' />
+    {% endif %}
+  {{ form.as_p }}
+  <label for='email'>Email</label>
+  <input type='text' id='email' class='form-control disabled' value='{{ request.user.email }}' disabled="disabled" /><span class='help-text'>Cannot change email</span><br/>
+  <button type='submit' class='btn btn-default my-3'>Save</button>
+  <a href='{% url "password_change" %}'>Change Password</a>
+</form>
+</div>
+{% endblock %}

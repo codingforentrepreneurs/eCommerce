@@ -41,8 +41,8 @@
       <div class="card-body">
         <h4 class="card-title">Account Details</h4> 
             <div class='list-group'>
-                <a class='list-group-item' href='#'>Name</a>
-                <a class='list-group-item' href='#'>Reset Password</a>
+                <a class='list-group-item' href='{% url "account:user-update" %}'>Update Details</a>
+                <a class='list-group-item' href='{% url "password_change" %}'>Change Password</a>
                 
             </div>
 
