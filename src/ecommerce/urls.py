@@ -24,7 +24,11 @@ from django.views.generic import TemplateView, RedirectView
 
 
 from accounts.views import LoginView, RegisterView, GuestRegisterView
-from addresses.views import checkout_address_create_view, checkout_address_reuse_view
+from addresses.views import (
+    AddressListView,
+    checkout_address_create_view, 
+    checkout_address_reuse_view
+    )
 from billing.views import payment_method_view, payment_method_createview
 from carts.views import cart_detail_api_view
 from marketing.views import MarketingPreferenceUpdateView, MailchimpWebhookView
@@ -39,6 +43,8 @@ urlpatterns = [
     url(r'^accounts/$', RedirectView.as_view(url='/account')),
     url(r'^account/', include("accounts.urls", namespace='account')),
     url(r'^accounts/', include("accounts.passwords.urls")),
+    url(r'^address/$', RedirectView.as_view(url='/addresses')),
+    url(r'^addresses/$', AddressListView.as_view(), name='addresses'),
     url(r'^contact/$', contact_page, name='contact'),
     url(r'^login/$', LoginView.as_view(), name='login'),
     url(r'^checkout/address/create/$', checkout_address_create_view, name='checkout_address_create'),

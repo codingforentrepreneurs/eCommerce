@@ -3,8 +3,8 @@ from django.db import models
 from billing.models import BillingProfile
 
 ADDRESS_TYPES = (
-    ('billing', 'Billing'),
-    ('shipping', 'Shipping'),
+    ('billing', 'Billing address'),
+    ('shipping', 'Shipping address'),
 )
 
 class Address(models.Model):

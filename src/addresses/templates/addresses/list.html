@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class='row'>
+        {% for obj in object_list %}
+            <div class='col-12 col-md-3 my-3'>
+                <div class="card">
+                  <div class="card-body">
+                    <h4 class="card-title">{{ obj.address_line_1 }}</h4> 
+                     <small>{{ obj.get_address_type_display }}</small><br/>
+                     <br/>
+                     <h5>Address</h5>
+                     {{ obj.get_address|linebreaks }}
+                    
+                    <a href='#' class='btn btn-default'>Edit</a>
+                  </div>
+                </div>
+            </div>
+        {% endfor %}
+</div>
+{% endblock %}
