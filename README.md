@@ -370,3 +370,12 @@ More information coming soon.
 [15 - User Product History View](../../tree/e50e38a7f01c9348866a92e8c7e2e772ba229763/)
 
 [16 - Orders & Order Detail](../../tree/e92f5c4ac8413fc9988510b0889a5a582cbae462/)
+
+[17 - Final Addresses on Order](../../tree/d076db0f36de01abe10e0474ac09606e33800c44/)
+
+[18 - Addresses List View](../../tree/065d6e0fd246aa1510b835d6eb6bf732e104fc8d/)
+
+[19 and 20 - Update & Create Addresses Part 1 & 2](../../tree/a89b4cd06d42648b7920a301d7c70969838b9732/)
+
+
+
