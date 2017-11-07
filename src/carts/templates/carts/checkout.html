@@ -19,7 +19,7 @@
 
 {% else %}
             
-        {% if not object.shipping_address %}
+        {% if not object.shipping_address and shipping_address_required %}
 
          <div class='row'>
             <div class='col-12'>
