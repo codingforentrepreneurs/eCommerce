@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class='row'>
+    <div class='col-10 mx-auto col-md-6 '>
+        {% if form.instance.address_line_1  %}
+        <h3 class='my-5'>Update Address</h3>
+        {% else %}
+        <h3 class='my-5'>Create Address</h3>
+        {% endif %}
+        <hr>
+    <form method='POST' action=''> {% csrf_token %}
+      {{ form.as_p }}
+      <button type='submit' class='btn btn-default'>Save Address</button>
+    </form>
+    </div>
+
+</div>
+
+{% endblock %}
