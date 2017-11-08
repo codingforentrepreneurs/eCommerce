@@ -38,9 +38,9 @@
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
           <a class="dropdown-item {% if request.path == account_url %}active{% endif %}" href="{{ account_url }}">Home</a>
-          <a class="dropdown-item" href="#">Billing</a>
-          <a class="dropdown-item" href="#">Preferences</a>
-          <a class="dropdown-item" href="#">History</a>
+          <a class="dropdown-item" href="{{ account_url }}#billing">Billing</a>
+          <a class="dropdown-item" href="{% url "account:user-product-history" %}">History</a>
+          <a class='dropdown-item' href='{% url "library" %}'>Library</a>
           <div class="dropdown-divider"></div>
           <a class="dropdown-item" href="{{ logout_url }}">Logout</a>
         </div>
