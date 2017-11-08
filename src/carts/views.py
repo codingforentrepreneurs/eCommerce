@@ -109,7 +109,7 @@ def checkout_home(request):
         if is_prepared:
             did_charge, crg_msg = billing_profile.charge(order_obj)
             if did_charge:
-                order_obj.mark_paid()
+                order_obj.mark_paid() # sort a signal for us
                 request.session['cart_items'] = 0
                 del request.session['cart_id']
                 if not billing_profile.user:
