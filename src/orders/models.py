@@ -170,7 +170,7 @@ post_save.connect(post_save_order, sender=Order)
 
 
 
-class ProductPurchaseManager(models.Model):
+class ProductPurchaseManager(models.Manager):
     def all(self):
         return self.get_queryset().filter(refunded=False)
 
