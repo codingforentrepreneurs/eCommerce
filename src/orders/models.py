@@ -196,6 +196,13 @@ class ProductPurchaseManager(models.Manager):
     def by_request(self, request):
         return self.get_queryset().by_request(request)
 
+    def products_by_request(self, request):
+        qs = self.by_request(request).digital()
+        ids_ = [x.product.id for x in qs]
+        products_qs = Product.objects.filter(id__in=ids_).distinct()
+        return products_qs
+
+
 
 class ProductPurchase(models.Model):
     order_id            = models.CharField(max_length=120)

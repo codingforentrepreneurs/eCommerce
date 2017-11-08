@@ -32,7 +32,7 @@ class OrderDetailView(LoginRequiredMixin, DetailView):
 class LibraryView(LoginRequiredMixin, ListView):
     template_name = 'orders/library.html'
     def get_queryset(self):
-        return ProductPurchase.objects.by_request(self.request).digital()
+        return ProductPurchase.objects.products_by_request(self.request) #.by_request(self.request).digital()
 
 
 
