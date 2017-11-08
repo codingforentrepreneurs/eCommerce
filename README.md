@@ -377,5 +377,20 @@ More information coming soon.
 
 [19 and 20 - Update & Create Addresses Part 1 & 2](../../tree/a89b4cd06d42648b7920a301d7c70969838b9732/)
 
+### Selling Digital Items
+
+[1 - Digital Products & Cart](../../tree/69f842b8e19470eba122a5566a2da5d23880d388/)
+
+[2 - Shipping-less Checkout](../../tree/14cae3f833034abaf0190259851a09a40efdbc65/)
+
+[3 - Product Purchases](../../tree/49bb74466bd5da3464c2cb608d150336ac2eba48/)
+
+[4 - Handling Products Being Purchased](../../tree/3cfa6c4d7ffbbd83b8246fc7984bb0f8bb448ea9/)
+
+[5 - Display of Refunded Items](../../tree/c2d95bcf338b69eec962cff6aa92a409ad204ec3/)
+
+[6 - Library View](../../tree/4d1f98e4c81c9229945a1a3342297b4f52e680d1/)
+
+[7 - Library View for Products Only](../../tree/f1e3b4618699c73034e1ac85f4bf27ba4025879a/)
 
 
