@@ -1,8 +1,8 @@
-<form class='form-product-ajax' method='POST' action='{% url "cart:update" %}' data-endpoint='{% url "cart:update" %}' class="form"> {% csrf_token %}
-    <input type='hidden' name='product_id' value='{{ product.id }}' />
+<form class='form-product-ajax' method='POST' action='{% url "cart:update" %}' data-endpoint='{% url "cart:update" %}' class="form" {% if request.user.is_authenticated %}data-user='abc'{% endif %}> {% csrf_token %}
+    <input type='hidden' name='product_id' value='{{ product.id }}' {% if  product.is_digital %}data-is-digital='true'{% endif%}/>
       <span class='submit-span'>
     {% if product in cart.products.all %}
-        In cart <button type='submit' class='btn btn-link'>Remove?</button>
+        <div class='btn-group'> <a class='btn btn-link' href='/cart/'>In cart</a> <button type='submit' class='btn btn-link'>Remove?</button></div>
     {% else %}
         <button type='submit'  class='btn btn-success'>Add to cart</button>
     {% endif %}
