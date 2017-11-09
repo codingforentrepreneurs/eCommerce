@@ -105,21 +105,35 @@ $(document).ready(function(){
   // Cart + Add Products 
   var productForm = $(".form-product-ajax") // #form-product-ajax
 
-  function getOwnedProduct(productId){
-    // $.ajax({
-    //     url: actionEndpoint,
-    //     method: httpMethod,
-    //     data: formData,
-    //     success: function(data){
-    //     },
-    //     error: function(){
-
-    //     }
-    // })
-    if (productId == 1) {
-      return true
+  function getOwnedProduct(productId, submitSpan){
+    var actionEndpoint = '/orders/endpoint/verify/ownership/'
+    var httpMethod = 'GET'
+    var data = {
+      product_id: productId
     }
-    return false
+
+    var isOwner;
+    $.ajax({
+        url: actionEndpoint,
+        method: httpMethod,
+        data: data,
+        success: function(data){
+          console.log(data)
+          console.log(data.owner)
+          if (data.owner){
+            isOwner = true
+            submitSpan.html("<a class='btn btn-warning' href='/library/'>In Library</a>")
+          } else {
+            isOwner = false
+          }
+        },
+        error: function(erorr){
+          console.log(error)
+
+        }
+    })
+    return isOwner
+    
   }
 
   $.each(productForm, function(index, object){
@@ -131,10 +145,7 @@ $(document).ready(function(){
     var productIsDigital = productInput.attr("data-is-digital")
     
     if (productIsDigital && isUser){
-      var isOwned = getOwnedProduct(productId)
-      if (isOwned){
-        submitSpan.html("<a href='/library/'>In Library</a>")
-      } 
+      var isOwned = getOwnedProduct(productId, submitSpan)
     }
   })  
 
