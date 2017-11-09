@@ -404,3 +404,7 @@ More information coming soon.
 [12 - Perform the File Download](../../tree/6d92ca188e18eca8d4d4b7e1b017a010300e8c11/)
 
 [13 - Checking Download Permissions](../../tree/fe631500b7a4f69ab48b513cbf5d5be89d5a5e5c/)
+
+[14 - In Libary Display Part 1](../../tree/4f1b64f1df2b67d98bf8a0d81dc57947409ad2ea)
+
+[15 - In Libary Display Part 2 with Ajax](../../tree/46be780b0f0dd524d6eb4bbea63c9f0b2c4b9b7c)
