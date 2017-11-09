@@ -116,6 +116,8 @@ class ProductFile(models.Model):
                         upload_to=upload_product_file_loc, 
                         storage=FileSystemStorage(location=settings.PROTECTED_ROOT)
                         )
+    free            = models.BooleanField(default=False) # purchase required
+    user_required   = models.BooleanField(default=False) # user doesn't matter
 
 
     def __str__(self):
