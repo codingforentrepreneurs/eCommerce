@@ -393,4 +393,14 @@ More information coming soon.
 
 [7 - Library View for Products Only](../../tree/f1e3b4618699c73034e1ac85f4bf27ba4025879a/)
 
+[8 - Product File Model](../../tree/1e74caa60b3b6f52ced214a5169e111ac8399e2a/)
 
+[9 - Changing File Field Storage to Protected Location](../../tree/a7cfdd8849d8bc22d78f1ce565b653ba32967262/)
+
+[10 - Download Product File Part 1](../../tree/e3463e00d6257726d77dcf3ad72caa77e89ed1db/)
+
+[11 - Download Product File Part 2](../../tree/91cb57960416e4ab5701f0a2cc4e7b158f47985f/)
+
+[12 - Perform the File Download](../../tree/6d92ca188e18eca8d4d4b7e1b017a010300e8c11/)
+
+[13 - Checking Download Permissions](../../tree/fe631500b7a4f69ab48b513cbf5d5be89d5a5e5c/)
