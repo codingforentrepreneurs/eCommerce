@@ -1,92 +1,83 @@
 {% extends "base.html" %}
 
 
+{% block javascript %}
+
+<script>
+var ctx = document.getElementById("myChart").getContext('2d');
+var myChart = new Chart(ctx, {
+    type: 'line',
+    data: {
+        labels: ["Monday", "Tues", "Wed", "Thurs", "Friday", "Sat", "Sun"],
+        datasets: [{
+            label: 'Sales Per Day',
+            data: [12, 19, 3, 5, 2, 3, 49],
+           backgroundColor: 'rgba(0, 158, 29, 0.45)',
+            borderColor:'rgba(0, 158, 29, 1)',
+        }]
+    },
+    options: {
+        scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero:true
+                }
+            }]
+        },
+        backgroundColor: 'rgba(75, 192, 192, 1)'
+    }
+});
+</script>
+{% endblock %}
+
+
+
 {% block content %}
 
 
-<div class='row'>
+<div class='row my-5'>
     <div class='col-12'>
         <h1>Sales Data</h1>
     </div>
 </div>
 
-<div class='row'>
-    <div class='col-12'>
-        <h1>Today's sales</h1>
-    </div>
-    <div class='col'>
+<hr/>
+
+<div class='row my-5'>
+    <div class='col-4'>
+        <h3>Today's sales</h3>
+        <hr/>
         <p>Recent Total: ${{ today.recent_data.total__sum }}</p>
         <ol>
-        {% for order in today.recent %}
+        {% for order in today.recent|slice:":5" %}
             <li>{{ order.order_id }}
             {{ order.total }}
             {{ order.updated }}</li>
         {% endfor %}
     </ol>
-    </div>
-    <div class='col'>
-        <p>Shipped Total: ${{ today.shipped_data.total__sum }}</p>
-        <ol>
-        {% for order in today.shipped %}
-             <li>{{ order.order_id }}
-            {{ order.total }}
-            {{ order.updated }} </li>
-        {% endfor %}
-        </ol>
-    </div>
-    <div class='col'>
-        <p>Paid Totals: ${{ today.paid_data.total__sum }}</p>
-        <ol>
-        {% for order in today.paid %}
-             <li>{{ order.order_id }}
-            {{ order.total }}
-            {{ order.updated }} </li>
-        {% endfor %}
-    </ol>
-    </div>
-</div>
-
-
-
-<div class='row'>
-    <div class='col-12'>
-        <h1>This week's sales</h1>
-    </div>
-    <div class='col'>
+   
+    <h3>This week's sales</h3>
+    <hr/>
         <p>Recent Total: ${{ this_week.recent_data.total__sum }}</p>
         <ol>
-        {% for order in this_week.recent %}
+        {% for order in this_week.recent|slice:":5" %}
             <li>{{ order.order_id }}
             {{ order.total }}
             {{ order.updated }}</li>
         {% endfor %}
     </ol>
     </div>
+
     <div class='col'>
-        <p>Shipped Total: ${{ this_week.shipped_data.total__sum }}</p>
-        <ol>
-        {% for order in this_week.shipped %}
-             <li>{{ order.order_id }}
-            {{ order.total }}
-            {{ order.updated }} </li>
-        {% endfor %}
-        </ol>
-    </div>
-    <div class='col'>
-        <p>Paid Totals: ${{ this_week.paid_data.total__sum }}</p>
-        <ol>
-        {% for order in this_week.paid %}
-             <li>{{ order.order_id }}
-            {{ order.total }}
-            {{ order.updated }} </li>
-        {% endfor %}
-    </ol>
+       <canvas id="myChart" width="400" height="400"></canvas>
     </div>
 </div>
 
 
 
-<div class='row'>
+<hr/>
+
+<div class='row my-5'>
     <div class='col-12'>
         <h1>Previous 4 weeks</h1>
     </div>
