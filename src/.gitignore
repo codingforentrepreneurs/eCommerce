@@ -5,6 +5,7 @@
 
 
 ecommerce/settings/local.py
+ecommerce/aws/ignore2.py
 
 .DS_STORE
 *.sublime-project
