@@ -4,29 +4,63 @@
 {% block javascript %}
 
 <script>
-var ctx = document.getElementById("myChart").getContext('2d');
-var myChart = new Chart(ctx, {
-    type: 'line',
-    data: {
-        labels: ["Monday", "Tues", "Wed", "Thurs", "Friday", "Sat", "Sun"],
-        datasets: [{
-            label: 'Sales Per Day',
-            data: [12, 19, 3, 5, 2, 3, 49],
-           backgroundColor: 'rgba(0, 158, 29, 0.45)',
-            borderColor:'rgba(0, 158, 29, 1)',
-        }]
-    },
-    options: {
-        scales: {
-            yAxes: [{
-                ticks: {
-                    beginAtZero:true
+
+$(document).ready(function(){
+    function renderChart(id, data, labels){
+        // var ctx = document.getElementById("myChart").getContext('2d');
+        var ctx = $('#' + id)
+            var myChart = new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: labels,
+                    datasets: [{
+                        label: 'Sales',
+                        data: data,
+                       backgroundColor: 'rgba(0, 158, 29, 0.45)',
+                        borderColor:'rgba(0, 158, 29, 1)',
+                    }]
+                },
+                options: {
+                    scales: {
+                        yAxes: [{
+                            ticks: {
+                                beginAtZero:true
+                            }
+                        }]
+                    },
+                    backgroundColor: 'rgba(75, 192, 192, 1)'
                 }
-            }]
-        },
-        backgroundColor: 'rgba(75, 192, 192, 1)'
+            });
     }
-});
+
+    function getSalesData(id, type){
+        var url = '/analytics/sales/data/'
+        var method = 'GET'
+        var data = {"type": type}
+        $.ajax({
+            url: url,
+            method: method,
+            data: data,
+            success: function(responseData){
+                renderChart(id, responseData.data, responseData.labels)
+            }, error: function(error){
+                $.alert("An error occurred")
+            }
+        })
+    }
+    var chartsToRender = $('.cfe-render-chart')
+    $.each(chartsToRender, function(index, html){
+        var $this = $(this)
+        if ( $this.attr('id') && $this.attr('data-type')){
+            getSalesData($this.attr('id'), $this.attr('data-type'))
+        }
+        
+    })
+    
+})
+
+
+
 </script>
 {% endblock %}
 
@@ -69,7 +103,7 @@ var myChart = new Chart(ctx, {
     </div>
 
     <div class='col'>
-       <canvas id="myChart" width="400" height="400"></canvas>
+       <canvas class='cfe-render-chart' id="thisWeekSales" data-type='week' width="400" height="400"></canvas>
     </div>
 </div>
 
@@ -83,13 +117,12 @@ var myChart = new Chart(ctx, {
     </div>
     <div class='col'>
         <p>Orders Total: ${{ last_four_weeks.recent_data.total__sum }}</p>
-    </div>
-    <div class='col'>
-        <p>Shipped Total: {% if last_four_weeks.shipped_data.total__sum %}
-            ${{ last_four_weeks.shipped_data.total__sum }} {% endif %}</p>
-    </div>
-    <div class='col'>
+        <p>Shipped Total: {% if last_four_weeks.shipped_data.total__sum %}${{ last_four_weeks.shipped_data.total__sum }} {% endif %}</p>
         <p>Paid Totals: ${{ last_four_weeks.paid_data.total__sum }}</p>
+
+    </div>
+     <div class='col'>
+       <canvas class='cfe-render-chart' id="fourWeekSales" data-type='4weeks' width="400" height="400"></canvas>
     </div>
 </div>
 
