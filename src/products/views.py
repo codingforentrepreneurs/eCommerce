@@ -1,7 +1,7 @@
 # from django.views import ListView
 from django.contrib import messages
 from django.contrib.auth.mixins import LoginRequiredMixin
-from django.http import Http404, HttpResponse
+from django.http import Http404, HttpResponse, HttpResponseRedirect
 from django.views.generic import ListView, DetailView, View
 from django.shortcuts import render, get_object_or_404, redirect
 
@@ -134,20 +134,22 @@ class ProductDownloadView(View):
             messages.error(request, "You do not have access to download this item")
             return redirect(download_obj.get_default_url())
 
-
-        file_root = settings.PROTECTED_ROOT
-        filepath = download_obj.file.path # .url /media/
-        final_filepath = os.path.join(file_root, filepath) # where the file is stored
-        with open(final_filepath, 'rb') as f:
-            wrapper = FileWrapper(f)
-            mimetype = 'application/force-download'
-            gussed_mimetype = guess_type(filepath)[0] # filename.mp4
-            if gussed_mimetype:
-                mimetype = gussed_mimetype
-            response = HttpResponse(wrapper, content_type=mimetype)
-            response['Content-Disposition'] = "attachment;filename=%s" %(download_obj.name)
-            response["X-SendFile"] = str(download_obj.name)
-            return response
+        aws_filepath = download_obj.generate_download_url()
+        print(aws_filepath)
+        return HttpResponseRedirect(aws_filepath)
+        # file_root = settings.PROTECTED_ROOT
+        # filepath = download_obj.file.path # .url /media/
+        # final_filepath = os.path.join(file_root, filepath) # where the file is stored
+        # with open(final_filepath, 'rb') as f:
+        #     wrapper = FileWrapper(f)
+        #     mimetype = 'application/force-download'
+        #     gussed_mimetype = guess_type(filepath)[0] # filename.mp4
+        #     if gussed_mimetype:
+        #         mimetype = gussed_mimetype
+        #     response = HttpResponse(wrapper, content_type=mimetype)
+        #     response['Content-Disposition'] = "attachment;filename=%s" %(download_obj.name)
+        #     response["X-SendFile"] = str(download_obj.name)
+        #     return response
         #return redirect(download_obj.get_default_url())
 
 
