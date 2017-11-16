@@ -31,6 +31,7 @@ from addresses.views import (
     checkout_address_create_view, 
     checkout_address_reuse_view
     )
+from analytics.views import SalesView
 from billing.views import payment_method_view, payment_method_createview
 from carts.views import cart_detail_api_view
 from marketing.views import MarketingPreferenceUpdateView, MailchimpWebhookView
@@ -49,6 +50,7 @@ urlpatterns = [
     url(r'^addresses/$', AddressListView.as_view(), name='addresses'),
     url(r'^addresses/create/$', AddressCreateView.as_view(), name='address-create'),
     url(r'^addresses/(?P<pk>\d+)/$', AddressUpdateView.as_view(), name='address-update'),
+    url(r'^analytics/sales/$', SalesView.as_view(), name='sales-analytics'),
     url(r'^contact/$', contact_page, name='contact'),
     url(r'^login/$', LoginView.as_view(), name='login'),
     url(r'^checkout/address/create/$', checkout_address_create_view, name='checkout_address_create'),
