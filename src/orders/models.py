@@ -24,6 +24,39 @@ class OrderManagerQuerySet(models.query.QuerySet):
     def recent(self):
         return self.order_by("-updated", "-timestamp")
 
+    def get_sales_breakdown(self):
+        recent = self.recent().not_refunded()
+        recent_data = recent.totals_data()
+        recent_cart_data = recent.cart_data()
+        shipped = recent.not_refunded().by_status(status='shipped')
+        shipped_data = shipped.totals_data()
+        paid = recent.by_status(status='paid')
+        paid_data = paid.totals_data()
+        data = {
+            'recent': recent,
+            'recent_data':recent_data,
+            'recent_cart_data': recent_cart_data,
+            'shipped': shipped,
+            'shipped_data': shipped_data,
+            'paid': paid,
+            'paid_data': paid_data
+        }
+        return data
+
+    def by_weeks_range(self, weeks_ago=7, number_of_weeks=2):
+        if number_of_weeks > weeks_ago:
+            number_of_weeks = weeks_ago
+        days_ago_start = weeks_ago * 7  # days_ago_start = 49
+        days_ago_end = days_ago_start - (number_of_weeks * 7) #days_ago_end = 49 - 14 = 35
+        start_date = timezone.now() - datetime.timedelta(days=days_ago_start)
+        end_date = timezone.now() - datetime.timedelta(days=days_ago_end) 
+        return self.by_range(start_date, end_date=end_date)
+
+    def by_range(self, start_date, end_date=None):
+        if end_date is None:
+            return self.filter(updated__gte=start_date)
+        return self.filter(updated__gte=start_date).filter(updated__lte=end_date)
+
     def by_date(self):
         now = timezone.now() - datetime.timedelta(days=9)
         return self.filter(updated__day__gte=now.day)
