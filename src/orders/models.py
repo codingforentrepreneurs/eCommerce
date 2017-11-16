@@ -1,10 +1,11 @@
 import math
+import datetime
 from django.conf import settings
 from django.db import models
 from django.db.models import Count, Sum, Avg
 from django.db.models.signals import pre_save, post_save
 from django.core.urlresolvers import reverse
-
+from django.utils import timezone
 
 from addresses.models import Address
 from billing.models import BillingProfile
@@ -22,6 +23,10 @@ ORDER_STATUS_CHOICES = (
 class OrderManagerQuerySet(models.query.QuerySet):
     def recent(self):
         return self.order_by("-updated", "-timestamp")
+
+    def by_date(self):
+        now = timezone.now() - datetime.timedelta(days=9)
+        return self.filter(updated__day__gte=now.day)
 
     def totals_data(self):
         return self.aggregate(Sum("total"), Avg("total"))
