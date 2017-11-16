@@ -12,7 +12,7 @@
 
 <div class='row'>
     <div class='col'>
-        <p>Recent Total: ${{ recent_orders_total.total__sum }}</p>
+        <p>Recent Total: ${{ recent_orders_data.total__sum }}</p>
         <ol>
         {% for order in recent_orders %}
             <li>{{ order.order_id }}
@@ -22,7 +22,7 @@
     </ol>
     </div>
     <div class='col'>
-        <p>Shipped</p>
+        <p>Shipped Total: ${{ shipped_orders_data.total__sum }}</p>
         <ol>
         {% for order in shipped_orders %}
              <li>{{ order.order_id }}
@@ -32,7 +32,7 @@
         </ol>
     </div>
     <div class='col'>
-        <p>Paid</p>
+        <p>Paid Totals: ${{ paid_orders_data.total__sum }}</p>
         <ol>
         {% for order in paid_orders %}
              <li>{{ order.order_id }}

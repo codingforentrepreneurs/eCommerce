@@ -1,6 +1,7 @@
 import math
 from django.conf import settings
 from django.db import models
+from django.db.models import Count, Sum, Avg
 from django.db.models.signals import pre_save, post_save
 from django.core.urlresolvers import reverse
 
@@ -21,6 +22,16 @@ ORDER_STATUS_CHOICES = (
 class OrderManagerQuerySet(models.query.QuerySet):
     def recent(self):
         return self.order_by("-updated", "-timestamp")
+
+    def totals_data(self):
+        return self.aggregate(Sum("total"), Avg("total"))
+
+    def cart_data(self):
+        return self.aggregate(
+                        Sum("cart__products__price"), 
+                        Avg("cart__products__price"), 
+                        Count("cart__products")
+                                    )
 
     def by_status(self, status="shipped"):
         return self.filter(status=status)
