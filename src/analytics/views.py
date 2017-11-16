@@ -22,6 +22,11 @@ class SalesView(LoginRequiredMixin, TemplateView):
         qs = Order.objects.all()
         context['orders'] = qs
         context['recent_orders'] = qs.recent().not_refunded()[:5]
+        recent_orders_total = 0
+        for i in context['recent_orders']:
+            recent_orders_total += i.total
+        context['recent_orders_total'] = recent_orders_total
+
         context['shipped_orders'] = qs.recent().not_refunded().by_status(status='shipped')[:5]
         context['paid_orders'] = qs.recent().not_refunded().by_status(status='paid')[:5]
         return context
