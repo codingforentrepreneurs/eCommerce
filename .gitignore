@@ -2,6 +2,7 @@
 
 .env
 notes/email-activation.py
+src/ecommerce/aws/ignore2.py
 
 # Virtualenv related
 bin/
