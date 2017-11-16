@@ -408,3 +408,13 @@ More information coming soon.
 [14 - In Library Display Part 1](../../tree/4f1b64f1df2b67d98bf8a0d81dc57947409ad2ea)
 
 [15 - In Library Display Part 2 with Ajax](../../tree/46be780b0f0dd524d6eb4bbea63c9f0b2c4b9b7c)
+
+[16 - AWS S3 File Upload](../../tree/96d664722a95dab2895313ef3731c84093d3596d/)
+
+[17 - Fixing the Upload Path](../../tree/75c4e175bf0c4516a6ee91e2f1a7280f998ba6bd/)
+
+[18 - Creating the AWS Download Class](../../tree/d1d5cb5820d813a87d184b9eb2c34b0ff54d3c76/)
+
+[19 - Using the AWS Download Client](../../tree/a879fcc03d0225e343212b17d4c6dcb43578fdc7/)
+
+[20 - A Custom Filename](../../tree/ed23c9b95d7b84de9447bcfbeacfd35d4cfdcd08/)
