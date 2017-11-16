@@ -5,6 +5,8 @@ from django.shortcuts import render
 
 
 
+from orders.models import Order
+
 class SalesView(LoginRequiredMixin, TemplateView):
     template_name = 'analytics/sales.html'
 
@@ -16,4 +18,10 @@ class SalesView(LoginRequiredMixin, TemplateView):
 
 
     def get_context_data(self, *args, **kwargs):
-        return super(SalesView, self).get_context_data(*args, **kwargs)
+        context = super(SalesView, self).get_context_data(*args, **kwargs)
+        qs = Order.objects.all()
+        context['orders'] = qs
+        context['recent_orders'] = qs.recent().not_refunded()[:5]
+        context['shipped_orders'] = qs.recent().not_refunded().by_status(status='shipped')[:5]
+        context['paid_orders'] = qs.recent().not_refunded().by_status(status='paid')[:5]
+        return context
