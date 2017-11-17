@@ -418,3 +418,30 @@ More information coming soon.
 [19 - Using the AWS Download Client](../../tree/a879fcc03d0225e343212b17d4c6dcb43578fdc7/)
 
 [20 - A Custom Filename](../../tree/ed23c9b95d7b84de9447bcfbeacfd35d4cfdcd08/)
+
+
+### Graphs and Sales
+
+[1 - Setup the View](../../tree/2b65b93648d4211e64cc02022a0988a96ac53b9f/)
+
+[2 - Add Context for the Order Data](../../tree/f6e5671c5c9170f3e0fdd3427acb0c49b3f60751/)
+
+[3 - Intuitive Recent Order Total](../../tree/50326ef1c082d7bcdbe9351938043b4af28f68b7/)
+
+[4 - Aggregate & Annotate](../../tree/0438bd0af6b4559fd1b80b9456a32e5b2262c6d4/)
+
+[5 - Get Data by Custom QuerySet](../../tree/8bdec3c85ec8b3a842816efbc4d80223a6d862dd/)
+
+[6 - Intro to Datetime Module](../../tree/b9f8bb1775c8037326ba3a095a224a88cf6a0775/)
+
+[7 - Filter by Range of Time](../../tree/0a8a304296f926ad0bba4fa66dff566b7e20ecbb/)
+
+[8 - Chart-js Intro](../../tree/bd9c8861e58feb5dc2ce13103a1aa21c29e7638b/)
+
+[9 - Using Ajax to Render Charts](../../tree/a60c2fb9476111de483a5fcda4c7262a10f66392/)
+
+[10 - Display True Data](../../tree/dd8a626fbb6dc43efc0799f652a808f03b7542f8/)
+
+[11 - Cleanup](../../tree/fe478427f789ff2ed9110e8e3739d6e9975fe714/)
+
+[12 - Inline Js to External](../../tree/f827bac20fc98a85ff84232ed3ea4ec4ea877f56/)
