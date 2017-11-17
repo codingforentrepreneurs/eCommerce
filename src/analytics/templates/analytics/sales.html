@@ -82,24 +82,24 @@ $(document).ready(function(){
         <h3>Today's sales</h3>
         <hr/>
         <p>Recent Total: ${{ today.recent_data.total__sum }}</p>
-        <ol>
+        <ul>
         {% for order in today.recent|slice:":5" %}
-            <li>{{ order.order_id }}
-            {{ order.total }}
-            {{ order.updated }}</li>
+            <li class='my-3'>Order #{{ order.order_id }}<br/>
+            ${{ order.total }}<br/>
+            {{ order.updated|timesince }} ago</li>
         {% endfor %}
-    </ol>
+    </ul>
    
     <h3>This week's sales</h3>
     <hr/>
         <p>Recent Total: ${{ this_week.recent_data.total__sum }}</p>
-        <ol>
+        <ul>
         {% for order in this_week.recent|slice:":5" %}
-            <li>{{ order.order_id }}
-            {{ order.total }}
-            {{ order.updated }}</li>
+            <li class='my-3'>Order #{{ order.order_id }}<br/>
+            ${{ order.total }}<br/>
+            {{ order.updated|timesince }} ago</li>
         {% endfor %}
-    </ol>
+    </ul>
     </div>
 
     <div class='col'>
