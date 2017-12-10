@@ -1,14 +1,16 @@
-# eCommerce || Under Development
+# eCommerce
 
-![eCommerce Logo](https://cfe2-static.s3-us-west-2.amazonaws.com/media/courses/ecommerce/images/ecommerce_coding_for_entrepreneurs.jpg)
+[![eCommerce Logo](https://cfe2-static.s3-us-west-2.amazonaws.com/media/courses/ecommerce/images/ecommerce_coding_for_entrepreneurs.jpg)
+](https://www.codingforentrepreneurs.com/courses/ecommerce/)
 
-We're going to take you step-by-step to build a modern, fully open-source, eCommerce web application using Python, Django, Bootstrap, Javascript, and more. 
+This course will teach you step-by-step to build a eCommerce site from scratch. We'll be using open-source software to create each aspect of a fully functioning eCommerce business.
 
-More information coming soon.
+Full Course is here: [https://www.joincfe.com/courses/ecommerce/](https://www.joincfe.com/courses/ecommerce/)
+
+Below you'll find the related lecture code to any given section and lesson. Enjoy!
 
 
-
-# Lesson Code
+# Code
 
 ### Section - Hello World
 
