@@ -19,7 +19,7 @@ pip==9.0.1
 psycopg2==2.7.3.1
 python-dateutil==2.6.1
 pytz==2017.2
-requests==2.18.4
+requests>=2.20.0
 s3transfer==0.1.11
 setuptools==36.6.0
 six==1.11.0
