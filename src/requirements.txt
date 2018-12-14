@@ -6,7 +6,7 @@ cfe==0.0.15
 chardet==3.0.4
 dj-database-url==0.4.2
 django-storages==1.6.5
-django==1.11.6
+django==1.11.17
 docutils==0.14
 gitdb2==2.0.3
 gitpython==2.1.7
@@ -25,5 +25,5 @@ setuptools==36.6.0
 six==1.11.0
 smmap2==2.0.3
 stripe==1.68.0
-urllib3==1.22
+urllib3>=1.23
 wheel==0.30.0
