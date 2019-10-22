@@ -14,7 +14,7 @@ gunicorn==19.7.1
 idna==2.6
 jmespath==0.9.3
 olefile==0.44
-pillow==4.3.0
+pillow==6.2.0
 pip==9.0.1
 psycopg2==2.7.3.1
 python-dateutil==2.6.1
