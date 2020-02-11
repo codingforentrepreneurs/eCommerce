@@ -6,7 +6,7 @@ cfe==0.0.15
 chardet==3.0.4
 dj-database-url==0.4.2
 django-storages==1.6.5
-django==1.11.17
+django==1.11.28
 docutils==0.14
 gitdb2==2.0.3
 gitpython==2.1.7
