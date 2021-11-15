@@ -14,7 +14,7 @@ idna==2.6
 jmespath==0.9.3
 olefile==0.44
 pillow
-pip==9.0.1
+pip==21.1
 psycopg2-binary
 python-dateutil==2.6.1
 pytz
