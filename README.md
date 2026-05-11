@@ -10,14 +10,14 @@ Full Course is here: [https://www.joincfe.com/courses/ecommerce/](https://www.jo
 Below you'll find the related lecture code to any given section and lesson. Enjoy!
 
 
-# Code
+ Code
 
-### Section - Hello World
+ Section N1 - Hello World
 
 [Intial Commit](../../tree/0927b316e9cdd8b0db01263b6b429e698d38d57a/)
 
 
-### Section - Products Component
+ Section N2 - Products Component
 
 [1 - Your first app Module](../../tree/ed8ceb52830b762d50bbf44f680255168c6f5530/)
 
@@ -45,7 +45,7 @@ Below you'll find the related lecture code to any given section and lesson. Enjo
 
 
 
-### Section: Templates
+ Section N3: Templates
 
 [1 Base Template](../../tree/b34bc1692301719be722bb691c1d67df4e98b455/)
 
