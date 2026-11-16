@@ -62,8 +62,11 @@ def get_filename(path): #/abc/filename.mp4
     return os.path.basename(path)
 
 
+_secure_random = random.SystemRandom()
+
+
 def random_string_generator(size=10, chars=string.ascii_lowercase + string.digits):
-    return ''.join(random.choice(chars) for _ in range(size))
+    return ''.join(_secure_random.choice(chars) for _ in range(size))
 
 
 def unique_key_generator(instance):
